@@ -1,6 +1,10 @@
 // eslint-disable-next-line
-export default (state, action) => {
-    if (action === 'FETCH_POSTS')
-        return state.payload
-    return state
+export default (state = [], action) => {
+    switch (action.type) {
+        case "FETCH_POSTS":
+            return action.payload
+        default:
+            return state
+    }
+
 }
